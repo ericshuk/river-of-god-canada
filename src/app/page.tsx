@@ -1,258 +1,43 @@
 import { Button, Input } from '@nextui-org/react';
-import React, { PropsWithChildren, ReactNode } from 'react';
+import React from 'react';
 import { FaPrayingHands } from 'react-icons/fa';
-import { twMerge } from 'tailwind-merge';
-import { tv } from 'tailwind-variants';
 
-const YouTube = ({ embedId }: { embedId: string }) => {
-  return (
-    <iframe
-      className='aspect-video h-48 rounded-xl bg-gray-500'
-      src={`https://www.youtube.com/embed/${embedId}`}
-      allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-      allowFullScreen
-      title='Embedded youtube'
-    />
-  );
-};
+import {
+  Heading,
+  HeroSection,
+  LandingDecoration,
+  LandingHeroBackgroundVideo,
+  LandingSection,
+  MultiLandingSection,
+  YouTubeEmbedCardList,
+} from '@/components';
 
-const Decoration = ({ flipped = false }: { flipped?: boolean }) => {
-  return (
-    <div
-      className={twMerge(
-        'mx-4 flex h-6 w-[calc(100%-5rem)] flex-col gap-3 overflow-hidden',
-        flipped ? 'flex-col-reverse self-end' : ''
-      )}
-    >
-      <div className='w-[calc(100%-2.5rem)] flex-1 rounded-full bg-[#615013]'></div>
-      <div className='ml-10 w-[calc(100%-2.5rem)] flex-1 rounded-full bg-[#615013]'></div>
-    </div>
-  );
-};
-
-const landingSection = tv({
-  slots: {
-    base: 'relative z-10 flex w-full flex-col items-center overflow-hidden first:bg-transparent',
-    background: 'absolute -z-10 h-full w-full',
-    inner:
-      'flex flex-col h-full max-w-screen-xl flex-col items-start gap-8 p-8',
-    header: 'flex flex-col w-full gap-4',
-    heading: 'text-3xl drop-shadow-xl',
-    subHeading: 'text-lg drop-shadow-xl',
-  },
-  variants: {
-    alignment: {
-      center: { base: 'items-center' },
-      left: { base: 'items-start' },
-      right: { base: 'items-end' },
-      alternating: { base: 'even:items-end odd:items-start' },
-    },
-    direction: {
-      column: { inner: 'flex-col' },
-      row: { inner: 'md:flex-row' },
-    },
-    type: {
-      default: { base: 'bg-transparent' },
-      striped: { base: 'odd:bg-background-900 even:bg-background-800' },
-      hero: {
-        base: 'h-[calc(100vh-4rem)] bg-background-800',
-        inner: 'items-center justify-center',
-        heading: 'text-8xl uppercase text-center',
-        subHeading: 'text-xl text-center',
-      },
-    },
-  },
-  defaultVariants: {
-    direction: 'column',
-    type: 'default',
-  },
-});
-
-type LandingSectionProps = {
-  background?: ReactNode;
-  bottomDecoration?: ReactNode;
-  classNames?: {
-    background?: string;
-    outer?: string;
-    inner?: string;
-    header?: string;
-    heading?: string;
-    subHeading?: string;
-  };
-  children?: ReactNode;
-  topDecoration?: ReactNode;
-  heading?: string;
-  subHeading?: ReactNode;
-  alignment?: typeof landingSection.defaultVariants.alignment;
-  direction?: typeof landingSection.defaultVariants.direction;
-  type?: typeof landingSection.defaultVariants.type;
-} & PropsWithChildren;
-
-const LandingSection = ({
-  background,
-  children,
-  classNames,
-  heading,
-  subHeading,
-  alignment = 'center',
-  direction = 'column',
-  type = 'default',
-}: LandingSectionProps) => {
-  const {
-    base,
-    inner,
-    background: backgroundVariant,
-    header: headerVariant,
-    heading: headingVariant,
-    subHeading: subHeadingVariant,
-  } = landingSection({ alignment, direction, type });
-
-  const BaseTag =
-    type === 'hero'
-      ? 'header'
-      : ('section' satisfies keyof JSX.IntrinsicElements);
-  const HeaderTag = (
-    type === 'hero' ? 'h1' : 'h2'
-  ) satisfies keyof JSX.IntrinsicElements;
-  const SubHeaderTag = (
-    type === 'hero' ? 'h2' : 'h3'
-  ) satisfies keyof JSX.IntrinsicElements;
-
-  return (
-    <BaseTag className={twMerge(base(), classNames?.outer)}>
-      {background && (
-        <div className={twMerge(backgroundVariant(), classNames?.background)}>
-          {background}
-        </div>
-      )}
-      <div className={twMerge(inner(), classNames?.inner)}>
-        <div className={twMerge(headerVariant(), classNames?.header)}>
-          {heading && (
-            <HeaderTag
-              className={twMerge(headingVariant(), classNames?.heading)}
-            >
-              {heading}
-            </HeaderTag>
-          )}
-          {subHeading && (
-            <SubHeaderTag
-              className={twMerge(subHeadingVariant(), classNames?.subHeading)}
-            >
-              {subHeading}
-            </SubHeaderTag>
-          )}
-        </div>
-        {children}
-      </div>
-    </BaseTag>
-  );
-};
-
-type HeroSectionProps = {
-  backgroundSrc?: string;
-} & Omit<LandingSectionProps, 'children' | 'background'>;
-
-const HeroSection = ({
-  classNames,
-  backgroundSrc = '',
-  heading = '',
-  subHeading = '',
-}: HeroSectionProps) => {
-  return (
-    <LandingSection
-      background={
-        backgroundSrc ? (
-          <video
-            src={backgroundSrc}
-            className='h-full w-full object-cover'
-            loop
-            autoPlay
-            muted
-          />
-        ) : undefined
-      }
-      classNames={classNames}
-      heading={heading}
-      subHeading={subHeading}
-      type='hero'
-    />
-  );
-};
-
-const sectionGroup = tv({
-  slots: { base: 'flex w-full flex-col' },
-  variants: {
-    type: {
-      default: { base: 'bg-transparent' },
-      striped: { base: 'even:bg-background-800' },
-    },
-  },
-  defaultVariants: {
-    type: 'default',
-  },
-});
-
-type SectionGroupProps = {
-  sections: LandingSectionProps[];
-  topDecoration?: ReactNode;
-  bottomDecoration?: ReactNode;
-  type?: typeof sectionGroup.defaultVariants.type;
-};
-
-const SectionGroup = ({
-  topDecoration,
-  bottomDecoration,
-  sections,
-  type,
-}: SectionGroupProps) => {
-  const { base } = sectionGroup({ type });
-  return (
-    <LandingSection classNames={{ outer: base() }}>
-      {topDecoration}
-      {sections.map((section, index) => (
-        <LandingSection
-          {...section}
-          type={type === 'striped' ? 'default' : type}
-          key={index}
-        />
-      ))}
-      {bottomDecoration}
-    </LandingSection>
-  );
-};
-
-export default async function Home() {
+export default async function Landing() {
   return (
     <>
-      <HeroSection
-        backgroundSrc='/videos/hero.mp4'
-        heading='Welcome Home'
+      <LandingSection
+        type='hero'
+        background={<LandingHeroBackgroundVideo />}
+        heading={<Heading level={1}>Welcome Home</Heading>}
         subHeading='This section will contain welcoming words to the viewers'
       />
       <HeroSection
-        heading='River of God Canada'
-        subHeading='This section will contain welcoming words to the viewers'
+        heading={<Heading level={1}>River of God Canada Family</Heading>}
+        subHeading='Concise summary about River of God When did it start, led by Pastor Ian Samontina and Maurenne Samontina.'
       />
-      <SectionGroup
+      <MultiLandingSection
         type='striped'
-        topDecoration={<Decoration />}
-        bottomDecoration={<Decoration flipped />}
+        topDecoration={<LandingDecoration />}
+        bottomDecoration={<LandingDecoration flipped />}
         sections={[
           {
-            alignment: 'alternating',
+            alignment: 'center',
             heading: 'Watch our Latest Service',
             children: (
               <>
-                <div className='flex flex-wrap gap-10'>
-                  <YouTube embedId='bBJj3zCAfBw?si=y-c1rupdElfAN2f2' />
-                  <YouTube embedId='zofBinqC2F4?si=fsJ_7FB6ik2aNDM4' />
-                  <YouTube embedId='6tYrzUmLnu8?si=UdWEO9KY29aAjk7a' />
-                  <YouTube embedId='bBJj3zCAfBw?si=y-c1rupdElfAN2f2' />
-                  <YouTube embedId='zofBinqC2F4?si=fsJ_7FB6ik2aNDM4' />
-                  <YouTube embedId='6tYrzUmLnu8?si=UdWEO9KY29aAjk7a' />
-                </div>
+                <YouTubeEmbedCardList />
                 <Button radius='full' size='lg'>
-                  Watch more
+                  Check out more videos
                 </Button>
               </>
             ),
@@ -272,7 +57,7 @@ export default async function Home() {
         ]}
       />
 
-      <SectionGroup
+      <MultiLandingSection
         type='striped'
         sections={[
           {
@@ -288,7 +73,7 @@ export default async function Home() {
             heading: 'Come, Join us at our weekly service with the Lord',
             subHeading: (
               <>
-                Every Sunday - 11:00{' '}
+                <time dateTime='T11:00-05:00'>Every Sunday 11am EST</time>
                 <address>
                   65 Hanson Avenue, Kitchener, ON, Canada, N2C 2H6
                 </address>

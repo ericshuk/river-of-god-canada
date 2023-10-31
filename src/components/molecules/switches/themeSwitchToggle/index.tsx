@@ -19,15 +19,6 @@ export default function ThemeSwitchToggle() {
   }
 
   return (
-    // <Switch
-    //   size='lg'
-    //   color='primary'
-    //   startContent={<BsSun />}
-    //   endContent={<BsMoonStars />}
-    //   defaultSelected={theme === 'dark'}
-    //   isSelected={theme === 'dark'}
-    //   onValueChange={(value) => setTheme(value ? 'dark' : 'light')}
-    // />
     <Button
       isIconOnly
       variant='flat'

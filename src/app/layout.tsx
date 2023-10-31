@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://riverofgodcanada.dev'),
-  title: { default: 'ericshuk', template: '%s | Client Portal' },
+  title: { default: 'River of God Canada', template: '%s | Client Portal' },
   description: 'River of God Canada',
   applicationName: 'Eric Amshukov',
   authors: [

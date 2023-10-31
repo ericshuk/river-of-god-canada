@@ -10,7 +10,7 @@ const defaultMeta = {
   description:
     'River of God Canada Church is a non-denominational Christian Ministry',
   /** Without additional '/' on the end, e.g. https://theodorusclarence.com */
-  url: 'https://ericshuk.dev',
+  url: 'https://riverofgodcanada.com',
   type: 'website',
   robots: 'follow, index',
   /**

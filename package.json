@@ -27,7 +27,7 @@
     "file-type": "^18.5.0",
     "firebase": "^10.1.0",
     "framer": "^2.4.1",
-    "framer-motion": "^10.15.0",
+    "framer-motion": "^10.16.4",
     "fuse.js": "^6.6.2",
     "google-spreadsheet": "^4.0.3",
     "googleapis": "^122.0.0",
