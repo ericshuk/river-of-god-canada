@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
 
@@ -22,21 +22,7 @@ export type HeadingProps = {
   children: React.ReactNode;
   className?: string;
   level: 1 | 2 | 3 | 4 | 5 | 6;
-};
-
-const headingMotionVariants: Variants = {
-  offscreen: {
-    y: 25,
-    opacity: 0,
-  },
-  onscreen: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      bounce: 0.4,
-      duration: 1,
-    },
-  },
+  animation?: 'fade' | 'fade-elevate';
 };
 
 /**
@@ -47,6 +33,7 @@ const headingMotionVariants: Variants = {
 export default function Heading({
   children,
   level,
+  animation,
   className = '',
 }: HeadingProps) {
   const HeadingTag = `h${level}` satisfies keyof JSX.IntrinsicElements;
@@ -56,7 +43,21 @@ export default function Heading({
       initial='offscreen'
       whileInView='onscreen'
       viewport={{ once: true, amount: 0.8 }}
-      variants={headingMotionVariants}
+      variants={{
+        offscreen: {
+          y: animation === 'fade-elevate' ? 25 : 0,
+          opacity: animation === 'fade' || animation === 'fade-elevate' ? 0 : 1,
+        },
+        onscreen: {
+          y: 0,
+          opacity: 1,
+          transition: {
+            bounce: 0.4,
+            duration: 1.5,
+            delay: (level - 1) * 0.5,
+          },
+        },
+      }}
     >
       <HeadingTag className={twMerge(heading({ level }), className)}>
         {children}

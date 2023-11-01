@@ -9,7 +9,7 @@ export default function GoogleMapsEmbeded({ src }: GoogleMapsEmbededProps) {
   return (
     <iframe
       src={src}
-      className='aspect-square w-full rounded-xl border-0 dark:invert'
+      className='aspect-square max-w-xl rounded-xl border-0 ring ring-primary dark:invert'
       loading='lazy'
     />
   );

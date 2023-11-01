@@ -2,6 +2,8 @@ import { PropsWithChildren, ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
 
+import { Heading } from '@/components/atoms';
+
 const landingSection = tv({
   slots: {
     base: 'relative z-10 flex w-full flex-col items-center overflow-hidden first:bg-transparent',
@@ -28,9 +30,10 @@ const landingSection = tv({
       striped: { base: 'odd:bg-background-900 even:bg-background-800' },
       hero: {
         base: 'h-[calc(100vh-4rem)] bg-background-800',
-        inner: 'items-center justify-center',
-        heading: 'text-8xl uppercase text-center',
-        subHeading: 'text-xl text-center',
+        inner: 'items-center justify-center gap-20',
+        header: 'flex flex-col w-full gap-8',
+        heading: 'text-6xl md:text-7xl lg:text-8xl uppercase text-center',
+        subHeading: 'text-lg md:text-xl text-center max-w-2xl m-auto',
       },
     },
   },
@@ -57,6 +60,7 @@ export type LandingSectionProps = {
   subHeading?: ReactNode;
   alignment?: typeof landingSection.defaultVariants.alignment;
   direction?: typeof landingSection.defaultVariants.direction;
+  animation?: 'fade' | 'fade-elevate';
   /**
    * striped: alternating background colors
    *
@@ -71,6 +75,7 @@ export type LandingSectionProps = {
  * @param {LandingSectionProps} props
  */
 export default function LandingSection({
+  animation,
   background,
   children,
   classNames,
@@ -93,12 +98,6 @@ export default function LandingSection({
     type === 'hero'
       ? 'header'
       : ('section' satisfies keyof JSX.IntrinsicElements);
-  const HeaderTag = (
-    type === 'hero' ? 'h1' : 'h2'
-  ) satisfies keyof JSX.IntrinsicElements;
-  const SubHeaderTag = (
-    type === 'hero' ? 'h2' : 'h3'
-  ) satisfies keyof JSX.IntrinsicElements;
 
   return (
     <BaseTag className={twMerge(base(), classNames?.outer)}>
@@ -110,18 +109,22 @@ export default function LandingSection({
       <div className={twMerge(inner(), classNames?.inner)}>
         <div className={twMerge(headerVariant(), classNames?.header)}>
           {heading && (
-            <HeaderTag
+            <Heading
+              animation={animation}
+              level={type === 'hero' ? 1 : 2}
               className={twMerge(headingVariant(), classNames?.heading)}
             >
               {heading}
-            </HeaderTag>
+            </Heading>
           )}
           {subHeading && (
-            <SubHeaderTag
+            <Heading
+              animation={animation}
+              level={type === 'hero' ? 2 : 3}
               className={twMerge(subHeadingVariant(), classNames?.subHeading)}
             >
               {subHeading}
-            </SubHeaderTag>
+            </Heading>
           )}
         </div>
         {children}

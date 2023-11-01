@@ -1,16 +1,17 @@
 import { Button, Input } from '@nextui-org/react';
+import Image from 'next/image';
 import React from 'react';
 import { FaPrayingHands } from 'react-icons/fa';
 
 import {
-  Heading,
-  HeroSection,
+  InstagramEmbedCardList,
   LandingDecoration,
   LandingHeroBackgroundVideo,
   LandingSection,
   MultiLandingSection,
   YouTubeEmbedCardList,
 } from '@/components';
+import GoogleMapsEmbeded from '@/components/molecules/embeds/googleMapsEmbed';
 
 export default async function Landing() {
   return (
@@ -18,13 +19,18 @@ export default async function Landing() {
       <LandingSection
         type='hero'
         background={<LandingHeroBackgroundVideo />}
-        heading={<Heading level={1}>Welcome Home</Heading>}
+        animation='fade-elevate'
+        heading='Welcome Home'
         subHeading='This section will contain welcoming words to the viewers'
       />
-      <HeroSection
-        heading={<Heading level={1}>River of God Canada Family</Heading>}
+      <LandingSection
+        type='hero'
+        animation='fade'
+        heading='River of God Canada Family'
         subHeading='Concise summary about River of God When did it start, led by Pastor Ian Samontina and Maurenne Samontina.'
-      />
+      >
+        <InstagramEmbedCardList />
+      </LandingSection>
       <MultiLandingSection
         type='striped'
         topDecoration={<LandingDecoration />}
@@ -32,6 +38,7 @@ export default async function Landing() {
         sections={[
           {
             alignment: 'center',
+            animation: 'fade',
             heading: 'Watch our Latest Service',
             children: (
               <>
@@ -44,14 +51,25 @@ export default async function Landing() {
           },
           {
             alignment: 'alternating',
+            animation: 'fade',
             heading: 'Prayer of the Day',
+            direction: 'row',
             subHeading:
               'This section will contain simple prayers for the reader',
             children: (
-              <Button radius='full' size='lg'>
-                <FaPrayingHands />
-                Bless yourself
-              </Button>
+              <div className='flex flex-col gap-4'>
+                <Image
+                  src='/images/landing/prayer-of-the-day.jpg'
+                  alt='Prayer of the Day'
+                  width='300'
+                  height='300'
+                  className='overflow-hidden rounded-xl'
+                />
+                <Button radius='full' size='lg'>
+                  <FaPrayingHands />
+                  Bless yourself
+                </Button>
+              </div>
             ),
           },
         ]}
@@ -62,6 +80,7 @@ export default async function Landing() {
         sections={[
           {
             alignment: 'left',
+            animation: 'fade',
             heading: 'Check out our Upcoming Events',
             children: (
               <Button radius='full' size='lg'>
@@ -81,11 +100,7 @@ export default async function Landing() {
             ),
             direction: 'row',
             children: (
-              <iframe
-                src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2964.7282209419855!2d-80.47483306991366!3d43.4251331063455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882bf5238f7981f7%3A0xfdcdb8f71d4b1fdd!2s65%20Hanson%20Ave%2C%20Kitchener%2C%20ON%20N1C%204DR!5e0!3m2!1sen!2sca!4v1698623980280!5m2!1sen!2sca'
-                className='aspect-square w-full rounded-xl border-0 dark:invert'
-                loading='lazy'
-              />
+              <GoogleMapsEmbeded src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2964.7282209419855!2d-80.47483306991366!3d43.4251331063455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882bf5238f7981f7%3A0xfdcdb8f71d4b1fdd!2s65%20Hanson%20Ave%2C%20Kitchener%2C%20ON%20N1C%204DR!5e0!3m2!1sen!2sca!4v1698623980280!5m2!1sen!2sca' />
             ),
           },
         ]}
@@ -93,6 +108,7 @@ export default async function Landing() {
 
       <LandingSection
         type='striped'
+        animation='fade'
         heading="Our family is only one click away! We'll be happy to meet you"
         direction='row'
       >

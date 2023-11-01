@@ -27,7 +27,6 @@ module.exports = {
       themes: {
         dark: {
           extend: 'dark',
-
           colors: {
             background: {
               800: '#0f1024',
@@ -36,17 +35,17 @@ module.exports = {
             },
             foreground: '#ffffff',
             primary: {
-              50: '#FFC600',
-              100: '#FFD600',
-              200: '#FFE600',
-              300: '#FFF700',
-              400: '#FFFF00',
-              500: '#FFFF00',
-              600: '#FFFF00',
-              700: '#FFFF00',
-              800: '#FFFF00',
-              900: '#FFFF00',
-              DEFAULT: '#FFFF00',
+              50: '#8A86A9', // lightest shade
+              100: '#7C78A0',
+              200: '#6E6A97',
+              300: '#605C8E',
+              400: '#525084',
+              500: '#45447B',
+              600: '#373672',
+              700: '#292868',
+              800: '#1B1A5E',
+              900: '#0D0C55', // darkest shade
+              DEFAULT: '#8A86A9',
               foreground: '#ffffff',
             },
             focus: '#FFFF00',
@@ -74,17 +73,17 @@ module.exports = {
             },
             foreground: '#000000',
             primary: {
-              50: '#B27300',
-              100: '#BF7B00',
-              200: '#CC8400',
-              300: '#D88C00',
-              400: '#E59400',
-              500: '#F29C00',
-              600: '#FFA500',
-              700: '#FFAD00',
-              800: '#FFB500',
-              900: '#FFB500',
-              DEFAULT: '#F29C00',
+              50: '#1A1833', // lightest shade
+              100: '#211F3B',
+              200: '#282643',
+              300: '#2F2D4C',
+              400: '#363454',
+              500: '#3D3B5D',
+              600: '#444266',
+              700: '#4B496E',
+              800: '#525076',
+              900: '#59577F', // darkest shade
+              DEFAULT: '#1A1833',
               foreground: '#000000',
             },
             focus: '#FFA500',
