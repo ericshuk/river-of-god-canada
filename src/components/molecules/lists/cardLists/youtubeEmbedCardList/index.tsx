@@ -51,30 +51,6 @@ export default function YoutubeEmbedCardList() {
       >
         <YouTubeEmbed embedId='6tYrzUmLnu8?si=UdWEO9KY29aAjk7a' />
       </motion.li>
-      <motion.li
-        variants={liMotionVariants}
-        initial='offscreen'
-        whileInView='onscreen'
-        viewport={{ once: true, amount: 0.8 }}
-      >
-        <YouTubeEmbed embedId='bBJj3zCAfBw?si=y-c1rupdElfAN2f2' />
-      </motion.li>
-      <motion.li
-        variants={liMotionVariants}
-        initial='offscreen'
-        whileInView='onscreen'
-        viewport={{ once: true, amount: 0.8 }}
-      >
-        <YouTubeEmbed embedId='zofBinqC2F4?si=fsJ_7FB6ik2aNDM4' />
-      </motion.li>
-      <motion.li
-        variants={liMotionVariants}
-        initial='offscreen'
-        whileInView='onscreen'
-        viewport={{ once: true, amount: 0.8 }}
-      >
-        <YouTubeEmbed embedId='6tYrzUmLnu8?si=UdWEO9KY29aAjk7a' />
-      </motion.li>
     </motion.ul>
   );
 }

@@ -11,8 +11,8 @@ const landingSection = tv({
     inner:
       'flex flex-col h-full max-w-screen-xl flex-col items-start gap-8 p-8',
     header: 'flex flex-col w-full gap-4',
-    heading: 'text-3xl drop-shadow-xl',
-    subHeading: 'text-lg drop-shadow-xl',
+    heading: 'text-3xl drop-shadow-xl normal-case',
+    subHeading: 'text-lg drop-shadow-xl normal-case',
   },
   variants: {
     alignment: {
@@ -32,7 +32,7 @@ const landingSection = tv({
         base: 'h-[calc(100vh-4rem)] bg-background-800',
         inner: 'items-center justify-center gap-20',
         header: 'flex flex-col w-full gap-8',
-        heading: 'text-6xl md:text-7xl lg:text-8xl uppercase text-center',
+        heading: 'text-6xl md:text-7xl lg:text-8xl text-center uppercase',
         subHeading: 'text-lg md:text-xl text-center max-w-2xl m-auto',
       },
     },
@@ -46,6 +46,7 @@ const landingSection = tv({
 export type LandingSectionProps = {
   background?: ReactNode;
   bottomDecoration?: ReactNode;
+  id?: string;
   classNames?: {
     background?: string;
     outer?: string;
@@ -80,6 +81,7 @@ export default function LandingSection({
   children,
   classNames,
   heading,
+  id,
   subHeading,
   alignment = 'center',
   direction = 'column',
@@ -100,7 +102,7 @@ export default function LandingSection({
       : ('section' satisfies keyof JSX.IntrinsicElements);
 
   return (
-    <BaseTag className={twMerge(base(), classNames?.outer)}>
+    <BaseTag id={id} className={twMerge(base(), classNames?.outer)}>
       {background && (
         <div className={twMerge(backgroundVariant(), classNames?.background)}>
           {background}

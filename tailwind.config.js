@@ -1,13 +1,16 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const { nextui } = require('@nextui-org/react');
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   theme: {
-    fontFamily: {
-      sans: ['Open Sans', 'sans-serif'],
-    },
     extend: {
+      fontFamily: {
+        sans: ["'Nunito Sans'", 'sans-serif'],
+        serif: ["'Playfair Display'", 'serif'],
+        fantasy: ["'Great Vibes'", 'fantasy'],
+      },
       backgroundImage: {
         'hero-video': "url('/videos/hero.mp4')", // https://www.pexels.com/video/shadows-of-clouds-on-the-grounds-surface-2815408/
         'hero-video-dark': "url('/videos/hero-dark.mp4')", // https://www.pexels.com/video/thick-clouds-of-the-sky-reflections-on-a-river-2815411/
@@ -46,7 +49,7 @@ module.exports = {
               800: '#1B1A5E',
               900: '#0D0C55', // darkest shade
               DEFAULT: '#8A86A9',
-              foreground: '#ffffff',
+              foreground: '#000000',
             },
             focus: '#FFFF00',
           },
@@ -84,7 +87,7 @@ module.exports = {
               800: '#525076',
               900: '#59577F', // darkest shade
               DEFAULT: '#1A1833',
-              foreground: '#000000',
+              foreground: '#ffffff',
             },
             focus: '#FFA500',
           },

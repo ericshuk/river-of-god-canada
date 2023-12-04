@@ -17,6 +17,7 @@ export default async function Landing() {
   return (
     <>
       <LandingSection
+        id='home'
         type='hero'
         background={<LandingHeroBackgroundVideo />}
         animation='fade-elevate'
@@ -24,14 +25,17 @@ export default async function Landing() {
         subHeading='This section will contain welcoming words to the viewers'
       />
       <LandingSection
+        id='about'
         type='hero'
         animation='fade'
         heading='River of God Canada Family'
         subHeading='Concise summary about River of God When did it start, led by Pastor Ian Samontina and Maurenne Samontina.'
+        classNames={{ heading: 'font-serif' }}
       >
         <InstagramEmbedCardList />
       </LandingSection>
       <MultiLandingSection
+        id='service'
         type='striped'
         topDecoration={<LandingDecoration />}
         bottomDecoration={<LandingDecoration flipped />}
@@ -79,7 +83,7 @@ export default async function Landing() {
         type='striped'
         sections={[
           {
-            alignment: 'left',
+            alignment: 'center',
             animation: 'fade',
             heading: 'Check out our Upcoming Events',
             children: (
@@ -90,6 +94,7 @@ export default async function Landing() {
           },
           {
             heading: 'Come, Join us at our weekly service with the Lord',
+            alignment: 'center',
             subHeading: (
               <>
                 <time dateTime='T11:00-05:00'>Every Sunday 11am EST</time>
@@ -107,6 +112,7 @@ export default async function Landing() {
       />
 
       <LandingSection
+        id='connect'
         type='striped'
         animation='fade'
         heading="Our family is only one click away! We'll be happy to meet you"
@@ -116,7 +122,8 @@ export default async function Landing() {
           <Input placeholder='First name' />
           <Input placeholder='Last name' />
           <Input className='col-span-2' type='email' placeholder='Email' />
-          <Button type='submit' radius='full' size='lg'>
+          <div className='col-span-1'></div>
+          <Button color='primary' type='submit' radius='full' size='lg'>
             Submit
           </Button>
         </form>

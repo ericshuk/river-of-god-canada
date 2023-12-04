@@ -17,6 +17,7 @@ const multiLandingSection = tv({
 });
 
 export type MultiLandingSectionProps = {
+  id?: string;
   sections: LandingSectionProps[];
   topDecoration?: ReactNode;
   bottomDecoration?: ReactNode;
@@ -29,6 +30,7 @@ export type MultiLandingSectionProps = {
 };
 
 export default function MultiLandingSection({
+  id,
   topDecoration,
   bottomDecoration,
   sections,
@@ -36,7 +38,7 @@ export default function MultiLandingSection({
 }: MultiLandingSectionProps) {
   const { base } = multiLandingSection({ type });
   return (
-    <LandingSection classNames={{ outer: base() }}>
+    <LandingSection id={id} classNames={{ outer: base() }}>
       {topDecoration}
       {sections.map((section, index) => (
         <LandingSection

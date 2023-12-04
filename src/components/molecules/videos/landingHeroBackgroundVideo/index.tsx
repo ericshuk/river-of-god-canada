@@ -23,7 +23,7 @@ export default function LandingHeroBackgroundVideo() {
       <motion.video
         key={src}
         src={src}
-        className='h-full w-full object-cover'
+        className='absolute z-10 h-full w-full translate-y-20 scale-125 object-cover'
         autoPlay
         muted
         loop
@@ -31,12 +31,6 @@ export default function LandingHeroBackgroundVideo() {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 1 }}
-        style={{
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-          position: 'absolute',
-        }}
       />
     </AnimatePresence>
     // <video
