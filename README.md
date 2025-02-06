@@ -1,13 +1,11 @@
-<table>
-  <tr>
-    <td align="center"><img src="https://github.com/ericshuk/river-of-god-canada/blob/main/public/icons/windows11/SmallTile.scale-200.png?raw=true" alt="River of God Canada" /></td>
-    <td><h1 align="center"><a href="https://riverofgodcanada.ericshuk.dev">River of God Canada - Landing Page</a></h1><p>A modern and responsive landing page for a church, built with cutting-edge web
-technologies and clean code practices.</p></td>
-  </tr>
-</table>
-
-
-
+<p align="center">
+  <a href="https://heroui.com">
+<!--       <img width="20%" src="https://github.com/ericshuk/river-of-god-canada/blob/main/public/icons/windows11/SmallTile.scale-200.png?raw=true" alt="River of God Canada" /> -->
+      <h1 align="center">River of God Canada - Landing Page</h1>
+    <p>A modern and responsive landing page for a church, built with cutting-edge web
+technologies and clean code practices.</p>
+  </a>
+</p>
 
 🔗 **Live Website:**
 [River of God Canada](https://riverofgodcanada.ericshuk.dev)
