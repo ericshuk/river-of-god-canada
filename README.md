@@ -66,6 +66,7 @@ yarn dev
 
 Following Atomic Design Methodology, the folder structure is:
 
+```
 /src  
  ├── /components (Reusable UI components)  
  │ ├── /atoms (Smallest components like buttons, icons)  
@@ -75,6 +76,7 @@ Following Atomic Design Methodology, the folder structure is:
  ├── /app (Next.js app dir)  
  ├── /constants  
  ├── /public (Static assets)
+```
 
 ## Code Quality & Best Practices
 
