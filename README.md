@@ -1,7 +1,7 @@
 <table>
   <tr>
-    <td><img src="https://github.com/ericshuk/river-of-god-canada/blob/main/public/icons/windows11/SmallTile.scale-200.png?raw=true" alt="River of God Canada" /></td>
-    <td><h1><a href="https://riverofgodcanada.ericshuk.dev">River of God Canada - Landing Page</a></h1><p>A modern and responsive landing page for a church, built with cutting-edge web
+    <td align="center"><img src="https://github.com/ericshuk/river-of-god-canada/blob/main/public/icons/windows11/SmallTile.scale-200.png?raw=true" alt="River of God Canada" /></td>
+    <td><h1 align="center"><a href="https://riverofgodcanada.ericshuk.dev">River of God Canada - Landing Page</a></h1><p>A modern and responsive landing page for a church, built with cutting-edge web
 technologies and clean code practices.</p></td>
   </tr>
 </table>
