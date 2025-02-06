@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://heroui.com">
-<!--       <img width="20%" src="https://github.com/ericshuk/river-of-god-canada/blob/main/public/icons/windows11/SmallTile.scale-200.png?raw=true" alt="River of God Canada" /> -->
+      <img width="20%" src="https://raw.githubusercontent.com/ericshuk/river-of-god-canada/refs/heads/main/public/icons/android/android-launchericon-192-192.png" alt="River of God Canada" />
       <h1 align="center">River of God Canada - Landing Page</h1>
     <p>A modern and responsive landing page for a church, built with cutting-edge web
 technologies and clean code practices.</p>
@@ -67,14 +67,14 @@ yarn dev
 Following Atomic Design Methodology, the folder structure is:
 
 ```
-/src  
- ├── /components (Reusable UI components)  
- │ ├── /atoms (Smallest components like buttons, icons)  
- │ ├── /molecules (Combinations of atoms, e.g., form fields)  
- │ ├── /organisms (Complex UI sections)  
- │ ├── /templates (Full-page structures)  
- ├── /app (Next.js app dir)  
- ├── /constants  
+/src
+ ├── /components (Reusable UI components)
+ │ ├── /atoms (Smallest components like buttons, icons)
+ │ ├── /molecules (Combinations of atoms, e.g., form fields)
+ │ ├── /organisms (Complex UI sections)
+ │ ├── /templates (Full-page structures)
+ ├── /app (Next.js app dir)
+ ├── /constants
  ├── /public (Static assets)
 ```
 
