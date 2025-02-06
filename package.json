@@ -3,14 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "license": "MIT",
+  "engines": {
+    "yarn": ">=1.22",
+    "node": ">=18"
+  },
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "check-types": "tsc",
+    "dev": "next dev",
     "lint": "next lint",
     "postinstall": "husky",
-    "check-types": "tsc",
-    "pre-commit-lint": "yarn check-types && yarn lint-staged"
+    "preinstall": "npx only-allow yarn",
+    "pre-commit-lint": "yarn check-types && yarn lint-staged",
+    "start": "next start"
   },
   "dependencies": {
     "@heroui/react": "2.6.14",
@@ -42,6 +47,7 @@
     "eslint-plugin-unused-imports": "^4.1.4",
     "husky": "^9.1.7",
     "lint-staged": "^15.4.3",
+    "only-allow": "^1.2.1",
     "postcss": "^8",
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.11",
