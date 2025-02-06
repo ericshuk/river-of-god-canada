@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 /** Base site URL. */
-export const BASE_SITE_URL = 'https://riverofgodcanada.ericsh.uk';
+export const BASE_SITE_URL = 'https://riverofgodcanada.ericshuk.dev';
 
 /** Shared site config. */
 export const SITE_CONFIG = {
