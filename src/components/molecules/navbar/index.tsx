@@ -9,7 +9,7 @@ import {
   NavbarMenu,
   NavbarMenuItem,
   NavbarMenuToggle,
-} from '@nextui-org/react';
+} from '@heroui/react';
 import { useState } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
 

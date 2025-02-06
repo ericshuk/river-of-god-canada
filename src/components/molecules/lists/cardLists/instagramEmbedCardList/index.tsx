@@ -1,6 +1,6 @@
 'use client';
 
-import { Button } from '@nextui-org/button';
+import { Button } from '@heroui/button';
 import axios from 'axios';
 import { motion, Variants } from 'framer-motion';
 import { BsInstagram } from 'react-icons/bs';
@@ -35,7 +35,7 @@ const variants: Variants = {
 export default function InstagramEmbedCardList() {
   const { data } = useSwr<LoremPicsum[]>(
     'https://picsum.photos/v2/list?limit=6',
-    (url: string) => axios.get(url).then((res) => res.data)
+    (url: string) => axios.get(url).then((res) => res.data),
   );
 
   console.log(data);

@@ -1,4 +1,4 @@
-import { PropsWithChildren, ReactNode } from 'react';
+import { JSX, PropsWithChildren, ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
 
@@ -6,7 +6,7 @@ import { Heading } from '@/components/atoms';
 
 const landingSection = tv({
   slots: {
-    base: 'relative z-10 flex w-full flex-col items-center overflow-hidden first:bg-transparent',
+    base: 'relative flex z-10 w-full flex-col items-center overflow-hidden first:bg-transparent',
     background: 'absolute -z-10 h-full w-full',
     inner:
       'flex flex-col h-full max-w-screen-xl flex-col items-start gap-8 p-8',

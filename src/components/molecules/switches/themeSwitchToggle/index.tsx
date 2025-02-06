@@ -1,6 +1,6 @@
 'use client';
 
-import { Button, Skeleton } from '@nextui-org/react';
+import { Button, Skeleton } from '@heroui/react';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import { BsMoonStarsFill, BsSun } from 'react-icons/bs';

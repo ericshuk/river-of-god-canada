@@ -1,6 +1,5 @@
-import { Button, Input } from '@nextui-org/react';
+import { Button, Input } from '@heroui/react';
 import Image from 'next/image';
-import React from 'react';
 import { FaPrayingHands } from 'react-icons/fa';
 
 import {
@@ -29,7 +28,7 @@ export default async function Landing() {
         type='hero'
         animation='fade'
         heading='River of God Canada Family'
-        subHeading='Concise summary about River of God When did it start, led by Pastor Ian Samontina and Maurenne Samontina.'
+        subHeading='Concise summary about River of God When did it start, led by the pastor.'
         classNames={{ heading: 'font-serif' }}
       >
         <InstagramEmbedCardList />
