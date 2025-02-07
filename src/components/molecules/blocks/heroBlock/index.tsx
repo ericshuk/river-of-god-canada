@@ -1,17 +1,20 @@
-import { LandingSection, LandingSectionProps } from '@/components/molecules';
+import { Block, type BlockProps } from '@/components/molecules';
 
-type HeroSectionProps = {
+import { StrictOmit } from '@/types';
+
+type HeroBlockProps = {
   backgroundSrc?: string;
-} & Omit<LandingSectionProps, 'children'>;
+} & StrictOmit<BlockProps, 'children'>;
 
-export default function HeroSection({
+/** The big block section that is featured at the top of landing page.  */
+export default function HeroBlock({
   classNames,
   backgroundSrc = '',
   heading = '',
   subHeading = '',
-}: HeroSectionProps) {
+}: HeroBlockProps) {
   return (
-    <LandingSection
+    <Block
       background={
         backgroundSrc ? (
           <video

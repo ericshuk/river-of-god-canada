@@ -3,11 +3,11 @@ import Image from 'next/image';
 import { FaPrayingHands } from 'react-icons/fa';
 
 import {
+  Block,
+  BlockDecoration,
   InstagramEmbedCardList,
-  LandingDecoration,
   LandingHeroBackgroundVideo,
-  LandingSection,
-  MultiLandingSection,
+  MultiBlock,
   YouTubeEmbedCardList,
 } from '@/components';
 import GoogleMapsEmbeded from '@/components/molecules/embeds/googleMapsEmbed';
@@ -15,7 +15,7 @@ import GoogleMapsEmbeded from '@/components/molecules/embeds/googleMapsEmbed';
 export default async function Landing() {
   return (
     <>
-      <LandingSection
+      <Block
         id='home'
         type='hero'
         background={<LandingHeroBackgroundVideo />}
@@ -23,7 +23,7 @@ export default async function Landing() {
         heading='Welcome Home'
         subHeading='This section will contain welcoming words to the viewers'
       />
-      <LandingSection
+      <Block
         id='about'
         type='hero'
         animation='fade'
@@ -32,12 +32,12 @@ export default async function Landing() {
         classNames={{ heading: 'font-serif' }}
       >
         <InstagramEmbedCardList />
-      </LandingSection>
-      <MultiLandingSection
+      </Block>
+      <MultiBlock
         id='service'
         type='striped'
-        topDecoration={<LandingDecoration />}
-        bottomDecoration={<LandingDecoration flipped />}
+        topDecoration={<BlockDecoration />}
+        bottomDecoration={<BlockDecoration flipped />}
         sections={[
           {
             alignment: 'center',
@@ -78,7 +78,7 @@ export default async function Landing() {
         ]}
       />
 
-      <MultiLandingSection
+      <MultiBlock
         type='striped'
         sections={[
           {
@@ -110,7 +110,7 @@ export default async function Landing() {
         ]}
       />
 
-      <LandingSection
+      <Block
         id='connect'
         type='striped'
         animation='fade'
@@ -126,7 +126,7 @@ export default async function Landing() {
             Submit
           </Button>
         </form>
-      </LandingSection>
+      </Block>
 
       {/* Footer */}
       <footer className='py-16'>

@@ -1,10 +1,10 @@
-import { JSX, PropsWithChildren, ReactNode } from 'react';
+import type { JSX, PropsWithChildren, ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { tv } from 'tailwind-variants';
 
 import { Heading } from '@/components/atoms';
 
-const landingSection = tv({
+const block = tv({
   slots: {
     base: 'relative flex z-10 w-full flex-col items-center overflow-hidden first:bg-transparent',
     background: 'absolute -z-10 h-full w-full',
@@ -43,7 +43,7 @@ const landingSection = tv({
   },
 });
 
-export type LandingSectionProps = {
+export type BlockProps = {
   background?: ReactNode;
   bottomDecoration?: ReactNode;
   id?: string;
@@ -59,23 +59,19 @@ export type LandingSectionProps = {
   topDecoration?: ReactNode;
   heading?: ReactNode;
   subHeading?: ReactNode;
-  alignment?: typeof landingSection.defaultVariants.alignment;
-  direction?: typeof landingSection.defaultVariants.direction;
+  alignment?: typeof block.defaultVariants.alignment;
+  direction?: typeof block.defaultVariants.direction;
   animation?: 'fade' | 'fade-elevate';
   /**
    * striped: alternating background colors
    *
    * default: transparent background
    */
-  type?: typeof landingSection.defaultVariants.type;
+  type?: typeof block.defaultVariants.type;
 } & PropsWithChildren;
 
-/**
- * Landing section component used to create sections on the landing page.
- *
- * @param {LandingSectionProps} props
- */
-export default function LandingSection({
+/** Block section on the landing page. */
+export default function Block({
   animation,
   background,
   children,
@@ -86,7 +82,7 @@ export default function LandingSection({
   alignment = 'center',
   direction = 'column',
   type = 'default',
-}: LandingSectionProps) {
+}: BlockProps) {
   const {
     base,
     inner,
@@ -94,7 +90,7 @@ export default function LandingSection({
     header: headerVariant,
     heading: headingVariant,
     subHeading: subHeadingVariant,
-  } = landingSection({ alignment, direction, type });
+  } = block({ alignment, direction, type });
 
   const BaseTag =
     type === 'hero'

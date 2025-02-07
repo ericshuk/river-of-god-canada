@@ -1,8 +1,8 @@
 'use client';
 
 import {
-  Link,
   Navbar as BaseNavbar,
+  Link,
   NavbarBrand,
   NavbarContent,
   NavbarItem,
@@ -10,10 +10,15 @@ import {
   NavbarMenuItem,
   NavbarMenuToggle,
 } from '@heroui/react';
+import Image from 'next/image';
+import NextLink from 'next/link';
 import { useState } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
 
 import { ThemeSwitchToggle } from '@/components/molecules/switches';
+
+import BrandLogo from '@/assets/brand.png';
+import { SITE_CONFIG } from '@/constants';
 
 const items = [
   {
@@ -31,10 +36,6 @@ const items = [
   {
     id: 'connect',
     label: 'Connect',
-  },
-  {
-    id: 'give',
-    label: 'Give',
   },
 ];
 
@@ -65,9 +66,16 @@ export default function Navbar() {
     >
       <NavbarContent>
         <NavbarBrand>
-          <p className='font-bold uppercase text-inherit'>
-            River of God Canada
-          </p>
+          <Link
+            as={NextLink}
+            href='/'
+            className='gap-2 font-bold uppercase text-inherit'
+          >
+            <div className='relative size-12'>
+              <Image src={BrandLogo.src} alt='Brand Logo' layout='fill' />
+            </div>
+            {SITE_CONFIG.name}
+          </Link>
         </NavbarBrand>
       </NavbarContent>
 

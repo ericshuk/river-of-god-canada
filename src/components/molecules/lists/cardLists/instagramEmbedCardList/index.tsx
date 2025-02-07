@@ -51,7 +51,6 @@ export default function InstagramEmbedCardList() {
       >
         {data?.map((post) => (
           <InstagramEmbed key={post.id} src={post.download_url} alt={post.id} />
-          // <div key={post.id} className='h-10 w-10 bg-slate-500'></div>
         ))}
       </motion.div>
       <Button

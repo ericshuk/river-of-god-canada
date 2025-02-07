@@ -1,9 +1,9 @@
 import { ReactNode } from 'react';
 import { tv } from 'tailwind-variants';
 
-import { LandingSection, LandingSectionProps } from '@/components/molecules';
+import { Block, BlockProps } from '@/components/molecules';
 
-const multiLandingSection = tv({
+const multiBlock = tv({
   slots: { base: 'flex w-full flex-col' },
   variants: {
     type: {
@@ -16,9 +16,9 @@ const multiLandingSection = tv({
   },
 });
 
-export type MultiLandingSectionProps = {
+export type MultiBlockProps = {
   id?: string;
-  sections: LandingSectionProps[];
+  sections: BlockProps[];
   topDecoration?: ReactNode;
   bottomDecoration?: ReactNode;
   /**
@@ -26,28 +26,28 @@ export type MultiLandingSectionProps = {
    *
    * default: transparent background
    */
-  type?: typeof multiLandingSection.defaultVariants.type;
+  type?: typeof multiBlock.defaultVariants.type;
 };
 
-export default function MultiLandingSection({
+export default function MultiBlock({
   id,
   topDecoration,
   bottomDecoration,
   sections,
   type,
-}: MultiLandingSectionProps) {
-  const { base } = multiLandingSection({ type });
+}: MultiBlockProps) {
+  const { base } = multiBlock({ type });
   return (
-    <LandingSection id={id} classNames={{ outer: base() }}>
+    <Block id={id} classNames={{ outer: base() }}>
       {topDecoration}
       {sections.map((section, index) => (
-        <LandingSection
+        <Block
           {...section}
           type={type === 'striped' ? 'default' : type}
           key={index}
         />
       ))}
       {bottomDecoration}
-    </LandingSection>
+    </Block>
   );
 }

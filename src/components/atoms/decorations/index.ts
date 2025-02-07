@@ -1,1 +1,1 @@
-export * from './landingDecorations';
+export * from './blockDecorations';
