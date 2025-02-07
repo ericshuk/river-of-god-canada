@@ -1,8 +1,8 @@
 'use client';
 
 import {
-  Navbar as BaseNavbar,
   Link,
+  Navbar as BaseNavbar,
   NavbarBrand,
   NavbarContent,
   NavbarItem,

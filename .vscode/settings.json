@@ -7,7 +7,6 @@
     "source.organizeImports": "explicit",
     "source.sortMembers": "explicit"
   },
-  "headwind.runOnSave": false,
   "typescript.preferences.importModuleSpecifier": "non-relative",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "cSpell.words": ["Amshukov", "serverlessly", "signup"]
