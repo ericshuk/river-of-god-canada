@@ -8,8 +8,7 @@ technologies and clean code practices.</p>
 </p>
 
 🔗 **Live Website:**
-<a href="https://riverofgodcanada.ericshuk.dev" target="_blank">River of God
-Canada</a>
+[River of God Canada](https://riverofgodcanada.ericshuk.dev)
 
 ## **Features**
 
