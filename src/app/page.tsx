@@ -5,8 +5,8 @@ import { FaPrayingHands } from 'react-icons/fa';
 import {
   Block,
   BlockDecoration,
+  HeroBackgroundVideo,
   InstagramEmbedCardList,
-  LandingHeroBackgroundVideo,
   MultiBlock,
   YouTubeEmbedCardList,
 } from '@/components';
@@ -18,7 +18,7 @@ export default async function Landing() {
       <Block
         id='home'
         type='hero'
-        background={<LandingHeroBackgroundVideo />}
+        background={<HeroBackgroundVideo />}
         animation='fade-elevate'
         heading='Welcome Home'
         subHeading='This section will contain welcoming words to the viewers'

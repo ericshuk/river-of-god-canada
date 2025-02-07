@@ -4,7 +4,8 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 
-export default function LandingHeroBackgroundVideo() {
+/** Hero background video that dynamically switches based on the current theme of the site. */
+export default function HeroBackgroundVideo() {
   const [mounted, setMounted] = useState(false);
 
   const { theme } = useTheme();
@@ -33,12 +34,5 @@ export default function LandingHeroBackgroundVideo() {
         transition={{ duration: 1 }}
       />
     </AnimatePresence>
-    // <video
-    //   src={`/videos/hero${theme === 'dark' ? '-dark' : ''}.mp4`}
-    //   className='h-full w-full object-cover'
-    //   loop
-    //   autoPlay
-    //   muted
-    // />
   );
 }

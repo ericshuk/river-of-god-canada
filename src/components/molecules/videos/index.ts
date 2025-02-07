@@ -1,1 +1,1 @@
-export { default as LandingHeroBackgroundVideo } from './landingHeroBackgroundVideo';
+export { default as HeroBackgroundVideo } from './heroBackgroundVideo';
