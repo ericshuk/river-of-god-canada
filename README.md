@@ -15,6 +15,7 @@ technologies and clean code practices.</p>
 ✅ Built with **Next.js 15** for performance and scalability  
 ✅ **Tailwind CSS 3.4** for utility-first styling  
 ✅ **HeroUI (formerly NextUI)** for accessible and elegant UI components  
+✅ **Framer Motion** for smooth block animations and dynamic UI interactions  
 ✅ **TypeScript 5** for type safety and maintainability  
 ✅ **Dark mode** support for improved user experience  
 ✅ **Atomic design methodology** for scalable component organization  
@@ -29,6 +30,7 @@ maintainability
 
 - **Framework:** Next.js 15
 - **Styling:** Tailwind CSS 3.4, HeroUI
+- **Animations** Framer Motion
 - **Type Safety:** TypeScript 5
 - **Linting & Formatting:** ESLint, Prettier, Commentlint
 - **Git Hooks:** Husky
