@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://heroui.com">
+  <a href="https://riverofgodcanada.ericshuk.dev" target="_blank">
       <img width="20%" src="https://raw.githubusercontent.com/ericshuk/river-of-god-canada/refs/heads/main/public/icons/android/android-launchericon-192-192.png" alt="River of God Canada" />
       <h1 align="center">River of God Canada - Landing Page</h1>
     <p>A modern and responsive landing page for a church, built with cutting-edge web
@@ -8,7 +8,8 @@ technologies and clean code practices.</p>
 </p>
 
 🔗 **Live Website:**
-[River of God Canada](https://riverofgodcanada.ericshuk.dev)
+<a href="https://riverofgodcanada.ericshuk.dev" target="_blank">River of God
+Canada</a>
 
 ## **Features**
 
